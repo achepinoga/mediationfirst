@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract office architecture placeholder</title>
+  <desc id="desc">Subtle architectural placeholder in green, ivory and muted gold.</desc>
+  <rect width="1200" height="900" fill="#1F3D33"/>
+  <path d="M0 720h1200v180H0z" fill="#142821" opacity=".55"/>
+  <path d="M140 110h270v640H140zM480 160h210v590H480zM750 90h310v660H750z" fill="#F8F5EF" opacity=".1"/>
+  <path d="M190 160h170M190 230h170M190 300h170M190 370h170M190 440h170M190 510h170M190 580h170M520 215h130M520 285h130M520 355h130M520 425h130M520 495h130M520 565h130M805 150h205M805 225h205M805 300h205M805 375h205M805 450h205M805 525h205M805 600h205" stroke="#D8C79D" stroke-width="3" opacity=".42"/>
+  <circle cx="935" cy="200" r="170" fill="#B89B5E" opacity=".12"/>
+  <path d="M120 760c210-95 370-95 560 0s330 95 500 0" fill="none" stroke="#B89B5E" stroke-width="4" opacity=".36"/>
+</svg>
