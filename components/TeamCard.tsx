@@ -1,5 +1,6 @@
 import { Mail, Phone } from "lucide-react";
 import type { team } from "@/data/team";
+import { LanguageText } from "@/components/LanguageText";
 
 type Member = (typeof team)[number];
 
@@ -10,10 +11,16 @@ export function TeamCard({ member }: { member: Member }) {
         <div className="h-full rounded-full border border-gold-muted/40 bg-ivory" aria-label={`Portrét placeholder ${member.name}`} />
       </div>
       <div>
-        <p className="text-sm font-bold uppercase tracking-[0.18em] text-gold-muted">{member.role}</p>
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-gold-muted">
+          <LanguageText sk={member.role} en={member.roleEn} />
+        </p>
         <h2 className="mt-2 font-serif text-3xl text-green-forest">{member.name}</h2>
-        <p className="mt-4 leading-7 text-muted">{member.registration}</p>
-        <p className="mt-3 leading-7 text-muted">{member.summary}</p>
+        <p className="mt-4 leading-7 text-muted">
+          <LanguageText sk={member.registration} en={member.registrationEn} />
+        </p>
+        <p className="mt-3 leading-7 text-muted">
+          <LanguageText sk={member.summary} en={member.summaryEn} />
+        </p>
         <div className="mt-5 flex flex-wrap gap-4 text-sm font-semibold text-green-deep">
           <a href={`tel:${member.phone.replace(/\s/g, "")}`} className="focus-ring inline-flex items-center gap-2 rounded-md hover:text-green-forest">
             <Phone className="h-4 w-4 text-gold-muted" aria-hidden />

@@ -66,6 +66,21 @@ export default function ContactPage() {
             </div>
           </form>
         </div>
+        <div className="mt-12">
+          <h2 className="mb-4 font-serif text-2xl text-green-forest">Kde nás nájdete</h2>
+          <div className="overflow-hidden rounded-2xl border border-green-deep/10 shadow-line">
+            <iframe
+              src="https://maps.google.com/maps?q=Dobrovičova+16,+Bratislava,+Slovakia&output=embed&zoom=16"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Mediationfirst – Dobrovičova 16, Bratislava"
+            />
+          </div>
+        </div>
       </Container>
     </section>
   );

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { BenefitItem } from "@/components/BenefitItem";
 import { ContactCTA } from "@/components/ContactCTA";
+import { LanguageText } from "@/components/LanguageText";
 import { LegalServicesBanner } from "@/components/LegalServicesBanner";
 import { MunicipalityServiceBanner } from "@/components/MunicipalityServiceBanner";
 import { PriceList } from "@/components/PriceList";
@@ -12,22 +13,30 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { benefits, disputeCategories, staticPages } from "@/data/pages";
 import { team } from "@/data/team";
 
-const routeTitles: Record<string, { title: string; subtitle: string }> = {
+const routeTitles: Record<string, { title: string; titleEn: string; subtitle: string; subtitleEn: string }> = {
   "nas-tim": {
     title: "Náš tím",
-    subtitle: "Mediáciu poskytujú akreditované mediátorky s právnickou praxou."
+    titleEn: "Our team",
+    subtitle: "Mediáciu poskytujú akreditované mediátorky s právnickou praxou.",
+    subtitleEn: "Mediation is provided by accredited mediators with legal experience."
   },
   "ako-prebieha-mediacia": {
     title: "Ako prebieha mediácia",
-    subtitle: "Prehľadný proces od prvého kontaktu po uzavretie mediačnej dohody."
+    titleEn: "Mediation process",
+    subtitle: "Prehľadný proces od prvého kontaktu po uzavretie mediačnej dohody.",
+    subtitleEn: "A clear process from the first contact to the conclusion of the mediation agreement."
   },
   cennik: {
     title: "Cenník",
-    subtitle: "Transparentné sadzby a podmienky odmeny mediátora."
+    titleEn: "Price list",
+    subtitle: "Transparentné sadzby a podmienky odmeny mediátora.",
+    subtitleEn: "Transparent rates and conditions for the mediator's fee."
   },
   "vyhody-mediacie": {
     title: "Výhody mediácie",
-    subtitle: "Dôverná, rýchla a flexibilná cesta k dohode."
+    titleEn: "Benefits of mediation",
+    subtitle: "Dôverná, rýchla a flexibilná cesta k dohode.",
+    subtitleEn: "A confidential, fast and flexible path to agreement."
   }
 };
 
@@ -49,13 +58,22 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
     notFound();
   }
 
+  const title = page?.title ?? route?.title ?? "";
+  const titleEn = page?.titleEn ?? route?.titleEn ?? "";
+  const subtitle = page?.subtitle ?? route?.subtitle ?? "";
+  const subtitleEn = page?.subtitleEn ?? route?.subtitleEn ?? "";
+
   return (
     <>
       <section className="border-b border-green-deep/10 py-16">
         <Container>
           <p className="text-xs font-bold uppercase tracking-[0.24em] text-gold-muted">Mediationfirst</p>
-          <h1 className="mt-4 max-w-4xl font-serif text-5xl leading-tight text-green-forest">{page?.title ?? route.title}</h1>
-          <p className="mt-5 max-w-3xl text-xl leading-8 text-muted">{page?.subtitle ?? route.subtitle}</p>
+          <h1 className="mt-4 max-w-4xl font-serif text-5xl leading-tight text-green-forest">
+            <LanguageText sk={title} en={titleEn} />
+          </h1>
+          <p className="mt-5 max-w-3xl text-xl leading-8 text-muted">
+            <LanguageText sk={subtitle} en={subtitleEn} />
+          </p>
         </Container>
       </section>
 
@@ -63,10 +81,15 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
         <section className="py-20">
           <Container>
             <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
-              <SectionHeading title={page.subtitle} eyebrow={page.title} />
+              <SectionHeading
+                title={<LanguageText sk={page.subtitle} en={page.subtitleEn} />}
+                eyebrow={<LanguageText sk={page.title} en={page.titleEn} />}
+              />
               <div className="space-y-6 text-lg leading-9 text-muted">
-                {page.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                {page.paragraphs.map((paragraph, i) => (
+                  <p key={paragraph}>
+                    <LanguageText sk={paragraph} en={page.paragraphsEn[i]} />
+                  </p>
                 ))}
               </div>
             </div>
@@ -109,9 +132,24 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
           <Container>
             <PriceList />
             <div className="mt-8 space-y-4 rounded-2xl border border-green-deep/10 bg-white/80 p-6 text-muted">
-              <p>Odmena mediátora je stanovená na základe dohody medzi mediátorom a stranami sporu.</p>
-              <p>Platobné podmienky sú súčasťou dohody o začatí mediácie. Hodinová sadzba sa účtuje za každú začatú hodinu.</p>
-              <p>Spísanie mediačnej dohody nie je zahrnuté v cene mediácie, pokiaľ sa strany s mediátorom nedohodnú inak.</p>
+              <p>
+                <LanguageText
+                  sk="Odmena mediátora je stanovená na základe dohody medzi mediátorom a stranami sporu."
+                  en="The mediator's fee is determined by agreement between the mediator and the parties to the dispute."
+                />
+              </p>
+              <p>
+                <LanguageText
+                  sk="Platobné podmienky sú súčasťou dohody o začatí mediácie. Hodinová sadzba sa účtuje za každú začatú hodinu."
+                  en="The terms of payment are part of the agreement to commence mediation. The hourly rate is charged for every hour started."
+                />
+              </p>
+              <p>
+                <LanguageText
+                  sk="Spísanie mediačnej dohody nie je zahrnuté v cene mediácie, pokiaľ sa strany s mediátorom nedohodnú inak."
+                  en="Drafting the mediation agreement is not included in the price of mediation, unless the parties agree otherwise with the mediator."
+                />
+              </p>
             </div>
           </Container>
         </section>
@@ -119,15 +157,21 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
 
       {params.slug === "vyhody-mediacie" ? (
         <section className="py-20">
-          <Container className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+          <Container>
             <SectionHeading
-              eyebrow="Prečo mediácia"
-              title="Výhody, ktoré majú praktický význam"
-              text="Mediácia je navrhnutá tak, aby stranám pomohla nájsť riešenie bez zbytočného eskalovania konfliktu."
+              align="center"
+              eyebrow={<LanguageText sk="Prečo mediácia" en="Why mediation" />}
+              title={<LanguageText sk="Výhody, ktoré majú praktický význam" en="Benefits with practical significance" />}
+              text={
+                <LanguageText
+                  sk="Mediácia je navrhnutá tak, aby stranám pomohla nájsť riešenie bez zbytočného eskalovania konfliktu."
+                  en="Mediation is designed to help the parties find a solution without unnecessarily escalating the conflict."
+                />
+              }
             />
-            <div>
-              {benefits.map((benefit) => (
-                <BenefitItem key={benefit} text={benefit} />
+            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {benefits.map((benefit, i) => (
+                <BenefitItem key={benefit} text={benefit} index={i} />
               ))}
             </div>
           </Container>

@@ -1,4 +1,5 @@
 import { processSteps } from "@/data/pages";
+import { LanguageText } from "@/components/LanguageText";
 
 export function ProcessTimeline() {
   return (
@@ -9,8 +10,12 @@ export function ProcessTimeline() {
             <span className="font-serif text-5xl text-gold-muted">{String(index + 1).padStart(2, "0")}</span>
           </div>
           <div>
-            <h2 className="font-serif text-2xl text-green-forest">{step.title}</h2>
-            <p className="mt-3 leading-8 text-muted">{step.text}</p>
+            <h2 className="font-serif text-2xl text-green-forest">
+              <LanguageText sk={step.title} en={step.titleEn} />
+            </h2>
+            <p className="mt-3 leading-8 text-muted">
+              <LanguageText sk={step.text} en={step.textEn} />
+            </p>
           </div>
         </article>
       ))}
