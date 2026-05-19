@@ -18,7 +18,7 @@ export default function Home() {
     <>
       <Hero />
 
-      <section className="py-20">
+      <section className="py-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
@@ -44,7 +44,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-white/45 py-20">
+      <section className="border-y border-green-deep/8 bg-white py-20">
         <Container>
           <SectionHeading
             eyebrow="Spory"
@@ -106,8 +106,8 @@ export default function Home() {
           <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <SectionHeading
               eyebrow="Články"
-              title="Čistý článkový prehľad bez vizuálneho preťaženia"
-              text="Namiesto veľkých ilustračných fotografií články pracujú s typografiou, dátumom a jasnou témou."
+              title="Mediácia v praxi"
+              text="Praktické informácie a témy z oblasti mediácie, riešenia sporov a súvisiacich právnych otázok."
             />
             <Button href="/clanky" variant="secondary">
               Všetky články

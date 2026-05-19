@@ -8,7 +8,9 @@ export const articlesListQuery = groq`*[_type == "article"] | order(date desc) {
   category,
   categoryEn,
   excerpt,
-  excerptEn
+  excerptEn,
+  "coverImageUrl": coverImage.asset->url,
+  "coverImageAlt": coalesce(coverImage.alt, title)
 }`;
 
 export const articleBySlugQuery = groq`*[_type == "article" && slug.current == $slug][0] {
@@ -21,7 +23,9 @@ export const articleBySlugQuery = groq`*[_type == "article" && slug.current == $
   excerpt,
   excerptEn,
   body,
-  bodyEn
+  bodyEn,
+  "coverImageUrl": coverImage.asset->url,
+  "coverImageAlt": coalesce(coverImage.alt, title)
 }`;
 
 export const articleSlugsQuery = groq`*[_type == "article"] { "slug": slug.current }`;

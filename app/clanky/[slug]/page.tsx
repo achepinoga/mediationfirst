@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
 import { ArticleBody } from "@/components/ArticleBody";
@@ -15,6 +16,8 @@ import type { ArticleListItem } from "@/components/ArticleCard";
 type SanityArticleDetail = ArticleListItem & {
   body: PortableTextBlock[];
   bodyEn: PortableTextBlock[];
+  coverImageUrl?: string | null;
+  coverImageAlt?: string | null;
 };
 
 export async function generateStaticParams() {
@@ -34,7 +37,8 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
   if (sanityArticle) {
     const related: ArticleListItem[] = await client
       .fetch(`*[_type == "article" && slug.current != $slug] | order(date desc) [0...3] {
-        "slug": slug.current, title, titleEn, date, category, categoryEn, excerpt, excerptEn
+        "slug": slug.current, title, titleEn, date, category, categoryEn, excerpt, excerptEn,
+        "coverImageUrl": coverImage.asset->url, "coverImageAlt": coalesce(coverImage.alt, title)
       }`, { slug: params.slug })
       .catch(() => []);
 
@@ -50,6 +54,18 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
                 <LanguageText sk={sanityArticle.title} en={sanityArticle.titleEn ?? sanityArticle.title} />
               </h1>
               <p className="mt-5 text-sm font-semibold text-muted">{sanityArticle.date}</p>
+              {sanityArticle.coverImageUrl && (
+                <div className="relative mt-10 h-72 w-full overflow-hidden rounded-2xl sm:h-96">
+                  <Image
+                    src={sanityArticle.coverImageUrl}
+                    alt={sanityArticle.coverImageAlt ?? sanityArticle.title}
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="(max-width: 896px) 100vw, 896px"
+                  />
+                </div>
+              )}
             </Container>
           </section>
           <Container className="max-w-4xl py-16">

@@ -48,7 +48,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-white/10 pt-6 text-xs text-white/55">
-          © {new Date().getFullYear()} Mediationfirst. Prototyp redesignu.
+          © {new Date().getFullYear()} Mediationfirst. Všetky práva vyhradené.
         </div>
       </Container>
     </footer>

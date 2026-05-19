@@ -33,7 +33,7 @@ export function Header() {
             <div key={item.label} className="group relative">
               <Link
                 href={item.href}
-                className="focus-ring inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-semibold text-green-forest hover:bg-white"
+                className="focus-ring inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-semibold text-green-forest hover:bg-beige"
               >
                 {item.label}
                 {item.children ? <ChevronDown aria-hidden className="h-4 w-4 text-gold-muted" /> : null}
@@ -44,7 +44,7 @@ export function Header() {
                     <Link
                       key={child.href}
                       href={child.href}
-                      className="focus-ring block rounded-xl px-4 py-3 text-sm font-semibold text-charcoal hover:bg-ivory"
+                      className="focus-ring block rounded-xl px-4 py-3 text-sm font-semibold text-charcoal hover:bg-beige"
                     >
                       {child.label}
                     </Link>
@@ -60,7 +60,7 @@ export function Header() {
             href={site.legalUrl}
             target="_blank"
             rel="noreferrer"
-            className="focus-ring rounded-xl px-3 py-2 text-sm font-semibold text-green-forest hover:bg-white"
+            className="focus-ring rounded-xl px-3 py-2 text-sm font-semibold text-green-forest hover:bg-beige"
           >
             Právne služby
           </Link>

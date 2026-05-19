@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { site } from "@/data/site";
 import { Container } from "@/components/ui/Container";
@@ -5,8 +6,19 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function ContactCTA() {
   return (
-    <section className="bg-white/50 py-20">
-      <Container>
+    <section className="relative overflow-hidden py-24">
+      <div className="absolute inset-0">
+        <Image
+          src="/images/contact-office.png"
+          alt=""
+          fill
+          className="object-cover"
+          aria-hidden
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-ivory via-ivory/85 to-ivory/30" />
+      </div>
+      <Container className="relative z-10">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeading
             eyebrow="Kontakt"
@@ -15,7 +27,7 @@ export function ContactCTA() {
           />
           <div className="grid gap-4">
             {site.contacts.map((contact) => (
-              <div key={contact.email} className="rounded-2xl border border-green-deep/10 bg-white p-6">
+              <div key={contact.email} className="rounded-2xl border border-green-deep/10 bg-white p-6 shadow-line">
                 <h3 className="font-serif text-2xl text-green-forest">{contact.name}</h3>
                 <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold text-green-deep">
                   <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="focus-ring inline-flex items-center gap-2 rounded-md hover:text-green-forest">
@@ -29,7 +41,7 @@ export function ContactCTA() {
                 </div>
               </div>
             ))}
-            <div className="rounded-2xl border border-green-deep/10 bg-white p-6 text-green-forest">
+            <div className="rounded-2xl border border-green-deep/10 bg-white p-6 text-green-forest shadow-line">
               <p className="flex items-center gap-2 font-semibold">
                 <MapPin className="h-4 w-4 text-gold-muted" aria-hidden />
                 {site.address}

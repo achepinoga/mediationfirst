@@ -12,7 +12,7 @@ export default function ContactPage() {
             <SectionHeading
               eyebrow="Kontakt"
               title="Mediationfirst"
-              text="Kontaktujte nás telefonicky, emailom alebo cez formulár. Formulár je v prototype iba vizuálny."
+              text="Kontaktujte nás telefonicky, emailom alebo cez formulár nižšie."
             />
             <div className="mt-10 space-y-5">
               <div className="rounded-2xl border border-green-deep/10 bg-white/80 p-6">

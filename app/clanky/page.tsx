@@ -33,8 +33,8 @@ export default async function ArticlesPage() {
         <Container>
           <SectionHeading
             eyebrow="Články"
-            title="Poznámky a témy z mediácie"
-            text="Prehľad článkov je zámerne typografický a pokojný, bez veľkých ilustračných fotografií pri každom texte."
+            title="Mediácia v praxi"
+            text="Prehľad článkov a tém z oblasti mediácie, riešenia sporov a súvisiacich právnych otázok."
           />
         </Container>
       </section>

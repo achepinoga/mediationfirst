@@ -1,6 +1,7 @@
 export const team = [
   {
     name: "JUDr. Marcela Koprivňanská",
+    photo: "/images/marcela.jpeg",
     role: "Akreditovaná mediátorka",
     roleEn: "Accredited mediator",
     registration:
@@ -16,6 +17,7 @@ export const team = [
   },
   {
     name: "Mgr. Simona Mills",
+    photo: "/images/simona-mills.jpg",
     role: "Akreditovaná mediátorka a advokátka",
     roleEn: "Accredited mediator and attorney",
     registration:

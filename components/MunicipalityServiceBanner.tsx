@@ -31,7 +31,7 @@ export function MunicipalityServiceBanner() {
             <Button href="/kontakt" variant="secondary" className="bg-white text-green-forest">
               Kontaktovať nás
             </Button>
-            <Button href="/mediacne-sluzby" variant="quiet" className="text-white hover:text-gold-pale">
+            <Button href="https://banm.sk/novinka/119944/bezplatna-mediacno-pravna-poradna-v-bratislave-novom-meste-vyrieste-svoje-spory-mimosudne" variant="quiet" className="text-white hover:text-gold-pale">
               Zistiť viac
             </Button>
           </div>

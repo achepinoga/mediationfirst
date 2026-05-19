@@ -43,6 +43,12 @@ export const articleType = defineType({
       validation: (r) => r.required()
     }),
     defineField({
+      name: "coverImage",
+      title: "Cover Image",
+      type: "image",
+      options: { hotspot: true }
+    }),
+    defineField({
       name: "excerpt",
       title: "Excerpt (SK)",
       type: "text",
@@ -70,6 +76,6 @@ export const articleType = defineType({
     })
   ],
   preview: {
-    select: { title: "title", subtitle: "date" }
+    select: { title: "title", subtitle: "date", media: "coverImage" }
   }
 });

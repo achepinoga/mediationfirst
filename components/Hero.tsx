@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Award, Languages, Scale } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -37,11 +38,19 @@ export function Hero() {
           </div>
         </div>
         <div className="relative">
-          <div className="architectural-texture min-h-[430px] overflow-hidden rounded-2xl border border-green-deep/10 shadow-line">
-            <div className="flex h-full min-h-[430px] flex-col justify-end p-8 text-white">
+          <div className="relative min-h-[430px] overflow-hidden rounded-2xl border border-green-deep/10 shadow-line">
+            <Image
+              src="/images/hero-mediation-room.png"
+              alt="Mediačná miestnosť — pokojný neutrálny priestor"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-green-forest/60 via-green-forest/10 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
               <div className="max-w-sm border-l border-gold-pale/70 pl-5">
                 <p className="font-serif text-2xl leading-snug">Pokojný priestor pre dohodu, nie konfrontáciu.</p>
-                <p className="mt-4 text-sm leading-6 text-white/72">Placeholder vizuál: architektúra kancelárie, jemné línie, prirodzené svetlo.</p>
               </div>
             </div>
           </div>

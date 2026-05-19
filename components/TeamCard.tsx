@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
 import type { team } from "@/data/team";
 import { LanguageText } from "@/components/LanguageText";
@@ -7,8 +8,14 @@ type Member = (typeof team)[number];
 export function TeamCard({ member }: { member: Member }) {
   return (
     <article className="grid gap-6 rounded-2xl border border-green-deep/10 bg-white/80 p-6 md:grid-cols-[160px_1fr]">
-      <div className="min-h-44 rounded-xl border border-gold-muted/25 bg-[linear-gradient(145deg,#efe8da,#ffffff)] p-5">
-        <div className="h-full rounded-full border border-gold-muted/40 bg-ivory" aria-label={`Portrét placeholder ${member.name}`} />
+      <div className="relative min-h-44 overflow-hidden rounded-xl border border-gold-muted/25">
+        <Image
+          src={member.photo}
+          alt={member.name}
+          fill
+          className="object-cover object-top"
+          sizes="160px"
+        />
       </div>
       <div>
         <p className="text-sm font-bold uppercase tracking-[0.18em] text-gold-muted">
