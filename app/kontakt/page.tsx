@@ -1,4 +1,5 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Star } from "lucide-react";
+import { LanguageText } from "@/components/LanguageText";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/data/site";
@@ -10,15 +11,15 @@ export default function ContactPage() {
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <SectionHeading
-              eyebrow="Kontakt"
+              eyebrow={<LanguageText sk="Kontakt" en="Contact" />}
               title="Mediationfirst"
-              text="Kontaktujte nás telefonicky, emailom alebo cez formulár nižšie."
+              text={<LanguageText sk="Kontaktujte nás telefonicky, emailom alebo cez formulár nižšie." en="Contact us by phone, email or via the form below." />}
             />
             <div className="mt-10 space-y-5">
               <div className="rounded-2xl border border-green-deep/10 bg-white/80 p-6">
                 <p className="flex items-center gap-2 font-semibold text-green-forest">
                   <MapPin className="h-4 w-4 text-gold-muted" aria-hidden />
-                  Adresa: {site.address}
+                  <LanguageText sk="Adresa" en="Address" />: {site.address}
                 </p>
               </div>
               {site.contacts.map((contact) => (
@@ -27,11 +28,11 @@ export default function ContactPage() {
                   <div className="mt-4 space-y-2 text-sm font-semibold text-green-deep">
                     <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="focus-ring flex w-fit items-center gap-2 rounded-md hover:text-green-forest">
                       <Phone className="h-4 w-4 text-gold-muted" aria-hidden />
-                      TEL: {contact.phone}
+                      {contact.phone}
                     </a>
                     <a href={`mailto:${contact.email}`} className="focus-ring flex w-fit items-center gap-2 rounded-md hover:text-green-forest">
                       <Mail className="h-4 w-4 text-gold-muted" aria-hidden />
-                      Email: {contact.email}
+                      {contact.email}
                     </a>
                   </div>
                 </div>
@@ -39,10 +40,9 @@ export default function ContactPage() {
             </div>
           </div>
           <form className="rounded-2xl border border-green-deep/10 bg-white p-6 shadow-line sm:p-8">
-            {/* TODO: Integrate form submission with email service or CMS backend. */}
             <div className="grid gap-5">
               <label className="grid gap-2 text-sm font-semibold text-green-forest">
-                Meno
+                <LanguageText sk="Meno" en="Name" />
                 <input className="focus-ring rounded-xl border border-green-deep/15 bg-ivory px-4 py-3 text-base text-charcoal" name="name" type="text" />
               </label>
               <label className="grid gap-2 text-sm font-semibold text-green-forest">
@@ -50,24 +50,50 @@ export default function ContactPage() {
                 <input className="focus-ring rounded-xl border border-green-deep/15 bg-ivory px-4 py-3 text-base text-charcoal" name="email" type="email" />
               </label>
               <label className="grid gap-2 text-sm font-semibold text-green-forest">
-                Telefón
+                <LanguageText sk="Telefón" en="Phone" />
                 <input className="focus-ring rounded-xl border border-green-deep/15 bg-ivory px-4 py-3 text-base text-charcoal" name="phone" type="tel" />
               </label>
               <label className="grid gap-2 text-sm font-semibold text-green-forest">
-                Správa
+                <LanguageText sk="Správa" en="Message" />
                 <textarea className="focus-ring min-h-40 rounded-xl border border-green-deep/15 bg-ivory px-4 py-3 text-base text-charcoal" name="message" />
               </label>
               <button
                 type="button"
                 className="focus-ring inline-flex w-fit items-center justify-center rounded-xl bg-green-deep px-6 py-3 text-sm font-bold text-white transition hover:bg-green-forest"
               >
-                Odoslať
+                <LanguageText sk="Odoslať" en="Send" />
               </button>
             </div>
           </form>
         </div>
-        <div className="mt-12">
-          <h2 className="mb-4 font-serif text-2xl text-green-forest">Kde nás nájdete</h2>
+        <div className="mt-12 rounded-2xl border border-gold-muted/35 bg-green-deep p-6 text-white sm:p-8">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-gold-pale">
+                <LanguageText sk="Google recenzie" en="Google reviews" />
+              </p>
+              <h2 className="mt-2 font-serif text-2xl">
+                <LanguageText sk="Zanechajte nám recenziu" en="Leave us a review" />
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-white/75">
+                <LanguageText sk="Vaša spätná väzba nám pomáha zlepšovať naše služby a pomáha ďalším klientom." en="Your feedback helps us improve our services and helps other clients." />
+              </p>
+            </div>
+            <a
+              href="https://g.page/r/REPLACE_WITH_GOOGLE_PLACE_ID/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-green-forest transition hover:bg-gold-pale"
+            >
+              <Star className="h-4 w-4 text-gold-muted" aria-hidden />
+              <LanguageText sk="Ohodnotiť na Google" en="Rate us on Google" />
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-8">
+          <h2 className="mb-4 font-serif text-2xl text-green-forest">
+            <LanguageText sk="Kde nás nájdete" en="Where to find us" /></h2>
           <div className="overflow-hidden rounded-2xl border border-green-deep/10 shadow-line">
             <iframe
               src="https://maps.google.com/maps?q=Dobrovičova+16,+Bratislava,+Slovakia&output=embed&zoom=16"
