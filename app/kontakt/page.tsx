@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone, Star } from "lucide-react";
+import { ContactForm } from "@/components/ContactForm";
 import { LanguageText } from "@/components/LanguageText";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -39,32 +40,7 @@ export default function ContactPage() {
               ))}
             </div>
           </div>
-          <form className="rounded-2xl border border-green-deep/10 bg-white p-6 shadow-line sm:p-8">
-            <div className="grid gap-5">
-              <label className="grid gap-2 text-sm font-semibold text-green-forest">
-                <LanguageText sk="Meno" en="Name" />
-                <input className="focus-ring rounded-xl border border-green-deep/15 bg-ivory px-4 py-3 text-base text-charcoal" name="name" type="text" />
-              </label>
-              <label className="grid gap-2 text-sm font-semibold text-green-forest">
-                Email
-                <input className="focus-ring rounded-xl border border-green-deep/15 bg-ivory px-4 py-3 text-base text-charcoal" name="email" type="email" />
-              </label>
-              <label className="grid gap-2 text-sm font-semibold text-green-forest">
-                <LanguageText sk="Telefón" en="Phone" />
-                <input className="focus-ring rounded-xl border border-green-deep/15 bg-ivory px-4 py-3 text-base text-charcoal" name="phone" type="tel" />
-              </label>
-              <label className="grid gap-2 text-sm font-semibold text-green-forest">
-                <LanguageText sk="Správa" en="Message" />
-                <textarea className="focus-ring min-h-40 rounded-xl border border-green-deep/15 bg-ivory px-4 py-3 text-base text-charcoal" name="message" />
-              </label>
-              <button
-                type="button"
-                className="focus-ring inline-flex w-fit items-center justify-center rounded-xl bg-green-deep px-6 py-3 text-sm font-bold text-white transition hover:bg-green-forest"
-              >
-                <LanguageText sk="Odoslať" en="Send" />
-              </button>
-            </div>
-          </form>
+          <ContactForm />
         </div>
         <div className="mt-12 rounded-2xl border border-gold-muted/35 bg-green-deep p-6 text-white sm:p-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
