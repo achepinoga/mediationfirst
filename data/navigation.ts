@@ -8,7 +8,9 @@ export const navigation = [
       { label: "Čo je mediácia?", href: "/co-je-mediacia" },
       { label: "Spory riešené mediáciou", href: "/spory-riesene-mediaciou" },
       { label: "Ako prebieha mediácia", href: "/ako-prebieha-mediacia" },
-      { label: "Mediačné služby", href: "/mediacne-sluzby" }
+      { label: "Mediačné služby", href: "/mediacne-sluzby" },
+      { label: "Právne účinky mediácie", href: "/pravne-ucinky-mediacie" },
+      { label: "Vrátenie súdnych poplatkov", href: "/vratenie-sudnych-poplatkov" }
     ]
   },
   { label: "Cenník", href: "/cennik" },

@@ -47,7 +47,9 @@ export function generateStaticParams() {
     { slug: "nas-tim" },
     { slug: "ako-prebieha-mediacia" },
     { slug: "cennik" },
-    { slug: "vyhody-mediacie" }
+    { slug: "vyhody-mediacie" },
+    { slug: "vratenie-sudnych-poplatkov" },
+    { slug: "pravne-ucinky-mediacie" }
   ];
 }
 
@@ -94,18 +96,12 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
                 <div className="absolute inset-0 bg-gradient-to-r from-green-forest/30 to-transparent" />
               </div>
             )}
-            <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
-              <SectionHeading
-                title={<LanguageText sk={page.subtitle} en={page.subtitleEn} />}
-                eyebrow={<LanguageText sk={page.title} en={page.titleEn} />}
-              />
-              <div className="space-y-6 text-lg leading-9 text-muted">
-                {page.paragraphs.map((paragraph, i) => (
-                  <p key={paragraph}>
-                    <LanguageText sk={paragraph} en={page.paragraphsEn[i]} />
-                  </p>
-                ))}
-              </div>
+            <div className="mx-auto max-w-3xl space-y-6 text-lg leading-9 text-muted">
+              {page.paragraphs.map((paragraph, i) => (
+                <p key={paragraph}>
+                  <LanguageText sk={paragraph} en={page.paragraphsEn[i]} />
+                </p>
+              ))}
             </div>
             {params.slug === "spory-riesene-mediaciou" || params.slug === "mediacne-sluzby" ? (
               <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

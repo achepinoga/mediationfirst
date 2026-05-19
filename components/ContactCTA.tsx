@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { site } from "@/data/site";
+import { Button } from "@/components/ui/Button";
+import { LanguageText } from "@/components/LanguageText";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -20,11 +22,16 @@ export function ContactCTA() {
       </div>
       <Container className="relative z-10">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <SectionHeading
-            eyebrow="Kontakt"
-            title="Potrebujete vyriešiť spor pokojnou cestou?"
-            text="Napíšte nám alebo zavolajte. Najprv si stručne prejdeme Vašu situáciu a navrhneme ďalší postup."
-          />
+          <div>
+            <SectionHeading
+              eyebrow={<LanguageText sk="Kontakt" en="Contact" />}
+              title={<LanguageText sk="Potrebujete vyriešiť spor pokojnou cestou?" en="Do you need to resolve a dispute calmly?" />}
+              text={<LanguageText sk="Napíšte nám alebo zavolajte. Najprv si stručne prejdeme Vašu situáciu a navrhneme ďalší postup." en="Write to us or call us. We will first briefly review your situation and suggest the next steps." />}
+            />
+            <Button href="/kontakt" className="mt-6">
+              <LanguageText sk="Napísať cez formulár" en="Write via form" />
+            </Button>
+          </div>
           <div className="grid gap-4">
             {site.contacts.map((contact) => (
               <div key={contact.email} className="rounded-2xl border border-green-deep/10 bg-white p-6 shadow-line">

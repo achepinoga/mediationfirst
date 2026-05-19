@@ -174,5 +174,39 @@ export const staticPages = {
       "We first assess each dispute individually. We then propose the appropriate method of communication, procedure and conditions for initiating mediation.",
       "We provide services in both Slovak and English."
     ]
+  },
+  "vratenie-sudnych-poplatkov": {
+    title: "Vrátenie súdnych poplatkov",
+    titleEn: "Return of court fees",
+    subtitle: "Ak mediácia prebieha počas súdneho konania, môžete získať späť časť zaplatených poplatkov.",
+    subtitleEn: "If mediation takes place during court proceedings, you may be entitled to a partial refund of court fees paid.",
+    paragraphs: [
+      "Ak mediačné konanie prebieha počas súdneho konania a mediácia je úspešne ukončená schválením súdneho zmier, súdne poplatky sa vracajú podľa zákona č. 71/1992 Zb. o súdnych poplatkoch a poplatku za výpis z registra trestov nasledovne:",
+      "Ak konanie skončí schválením súdneho zmier do začiatku pojednávania vo veci samej, vráti sa účastníkom 90 % zo všetkých zaplatených poplatkov.",
+      "Ak konanie skončí schválením súdneho zmier po začatí pojednávania vo veci samej, vráti sa účastníkom 50 % zo všetkých zaplatených poplatkov.",
+      "Ak správny súd zastaví konanie o správnej žalobe z dôvodu uspokojenia žalobcu, vráti sa žalobcovi 75 % zo všetkých zaplatených poplatkov."
+    ],
+    paragraphsEn: [
+      "If mediation takes place during court proceedings and is successfully concluded by the approval of a court settlement, court fees are refunded pursuant to Act No. 71/1992 Coll. on court fees and the fee for a criminal record extract, as follows:",
+      "If the proceedings are concluded by an approved court settlement before the commencement of the hearing on the merits, 90% of all fees paid are refunded to the parties.",
+      "If the proceedings are concluded by an approved court settlement after the commencement of the hearing on the merits, 50% of all fees paid are refunded to the parties.",
+      "If the administrative court stays the proceedings on an administrative complaint due to the satisfaction of the claimant, 75% of all fees paid are refunded to the claimant."
+    ]
+  },
+  "pravne-ucinky-mediacie": {
+    title: "Právne účinky mediácie",
+    titleEn: "Legal effects of mediation",
+    subtitle: "Mediácia má významné právne účinky, ktoré chránia práva strán počas celého konania.",
+    subtitleEn: "Mediation has significant legal effects that protect the rights of the parties throughout the proceedings.",
+    paragraphs: [
+      "Počas mediačného konania nebeží premlčacia ani prekluzívna lehota, čo znamená, že strany sa nemusia obávať premlčania ani straty svojich práv.",
+      "Strany sporu získavajú čas na mimosúdne vyriešenie sporu a ak uzatvoria mediačnú dohodu, získavajú právne záväzný dokument, ktorý môžu v prípade neplnenia záväzkov dohodnutých v mediačnej dohode použiť ako relevantný právny nárok na súde.",
+      "Ak je mediačná dohoda spísaná vo forme notárskej zápisnice alebo je schválená ako zmier pred súdom alebo rozhodcovským orgánom, stáva sa exekučným titulom pre súdny výkon rozhodnutia alebo na podanie návrhu na exekúciu."
+    ],
+    paragraphsEn: [
+      "During the mediation process, there is no statute of limitations or preclusion period, which means that the parties do not have to worry about the statute of limitations or the loss of their rights.",
+      "The parties to the dispute gain time to resolve the dispute out of court and, if they reach a mediation agreement, they obtain a legally binding document that they can use as a relevant legal claim in court in the event of failure to fulfil the obligations agreed in the mediation agreement.",
+      "If a mediation agreement is written in the form of a notarial deed, or is approved as a settlement before a court or arbitration body, it becomes an enforcement title for judicial enforcement of a decision or a motion for enforcement."
+    ]
   }
 } as const;

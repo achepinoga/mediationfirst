@@ -6,6 +6,8 @@ export const translations: Record<string, string> = {
   "Spory riešené mediáciou": "Disputes solved by mediation",
   "Ako prebieha mediácia": "Mediation process",
   "Mediačné služby": "Mediation services",
+  "Právne účinky mediácie": "Legal effects of mediation",
+  "Vrátenie súdnych poplatkov": "Return of court fees",
   "Cenník": "Price list",
   "Výhody mediácie": "Benefits of mediation",
   "Články": "Articles",
