@@ -17,20 +17,14 @@ export function PriceList() {
       </div>
 
       <div className="rounded-2xl border border-green-deep/10 bg-white/80">
-        {rest.map((item, index) => (
-          <div
-            key={item.service}
-            className="grid gap-1 border-b border-green-deep/10 p-5 last:border-b-0 md:grid-cols-[80px_1fr]"
-          >
-            <span className="font-serif text-2xl text-gold-muted">{String(index + 1).padStart(2, "0")}</span>
-            <div>
-              <p className="font-semibold text-green-forest">
-                <LanguageText sk={item.service} en={item.serviceEn} />
-              </p>
-              <p className="mt-1 text-sm text-muted">
-                <LanguageText sk={item.price} en={item.priceEn} />
-              </p>
-            </div>
+        {rest.map((item) => (
+          <div key={item.service} className="border-b border-green-deep/10 p-5 last:border-b-0">
+            <p className="font-semibold text-green-forest">
+              <LanguageText sk={item.service} en={item.serviceEn} />
+            </p>
+            <p className="mt-1 text-sm text-muted">
+              <LanguageText sk={item.price} en={item.priceEn} />
+            </p>
           </div>
         ))}
       </div>

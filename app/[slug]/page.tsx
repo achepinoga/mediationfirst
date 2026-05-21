@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { BenefitItem } from "@/components/BenefitItem";
 import { ContactCTA } from "@/components/ContactCTA";
@@ -83,19 +82,6 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
       {page ? (
         <section className="py-20">
           <Container>
-            {params.slug === "o-nas" && (
-              <div className="relative mb-14 h-64 w-full overflow-hidden rounded-2xl sm:h-80">
-                <Image
-                  src="/images/about-office.png"
-                  alt="Mediačná kancelária — pokojné profesionálne prostredie"
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 1280px) 100vw, 1280px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-green-forest/30 to-transparent" />
-              </div>
-            )}
             <div className="mx-auto max-w-3xl space-y-6 text-lg leading-9 text-muted">
               {page.paragraphs.map((paragraph, i) => (
                 <p key={paragraph}>
@@ -132,17 +118,6 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
       {params.slug === "ako-prebieha-mediacia" ? (
         <section className="py-20">
           <Container>
-            <div className="relative mb-12 h-64 w-full overflow-hidden rounded-2xl sm:h-80">
-              <Image
-                src="/images/process-table.png"
-                alt="Mediačné stretnutie — rokovania pri stole"
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 1280px) 100vw, 1280px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-green-forest/40 to-transparent" />
-            </div>
             <ProcessTimeline />
           </Container>
         </section>
@@ -151,17 +126,6 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
       {params.slug === "cennik" ? (
         <section className="py-20">
           <Container>
-            <div className="relative mb-14 h-64 w-full overflow-hidden rounded-2xl sm:h-80">
-              <Image
-                src="/images/pricelist-scales.png"
-                alt="Mosadzná váha na mramore — transparentnosť a férovosť"
-                fill
-                className="object-cover object-center"
-                priority
-                sizes="(max-width: 1280px) 100vw, 1280px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-green-forest/30 to-transparent" />
-            </div>
             <PriceList />
             <div className="mt-8 space-y-4 rounded-2xl border border-green-deep/10 bg-white/80 p-6 text-muted">
               <p>
@@ -190,19 +154,7 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
       {params.slug === "vyhody-mediacie" ? (
         <section className="py-20">
           <Container>
-            <div className="relative mb-14 h-64 w-full overflow-hidden rounded-2xl sm:h-80">
-              <Image
-                src="/images/benefits-dawn.png"
-                alt="Bratislava pri východe slnka — nový začiatok po dohode"
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 1280px) 100vw, 1280px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-green-forest/40 to-transparent" />
-            </div>
             <SectionHeading
-              align="center"
               eyebrow={<LanguageText sk="Prečo mediácia" en="Why mediation" />}
               title={<LanguageText sk="Výhody, ktoré majú praktický význam" en="Benefits with practical significance" />}
               text={

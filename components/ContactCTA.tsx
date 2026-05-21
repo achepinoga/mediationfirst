@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { site } from "@/data/site";
 import { Button } from "@/components/ui/Button";
@@ -8,19 +7,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function ContactCTA() {
   return (
-    <section className="relative overflow-hidden py-24">
-      <div className="absolute inset-0">
-        <Image
-          src="/images/contact-office.png"
-          alt=""
-          fill
-          className="object-cover"
-          aria-hidden
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-ivory via-ivory/85 to-ivory/30" />
-      </div>
-      <Container className="relative z-10">
+    <section className="bg-white/50 py-20">
+      <Container>
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <SectionHeading

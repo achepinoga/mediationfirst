@@ -5,7 +5,7 @@ export function Logo() {
   return (
     <Link href="/" className="focus-ring rounded-md" aria-label="Mediationfirst domov">
       <Image
-        src="/images/logo.png"
+        src="/images/logo-green.png"
         alt="Mediationfirst"
         width={180}
         height={48}

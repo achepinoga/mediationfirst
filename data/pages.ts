@@ -77,26 +77,8 @@ export const prices: PriceItem[] = [
     priceEn: "€90–120 / hour"
   },
   {
-    service: "Pracovné spory",
-    serviceEn: "Employment disputes",
-    price: "na základe dohody",
-    priceEn: "by agreement"
-  },
-  {
-    service: "Civilné spory",
-    serviceEn: "Civil disputes",
-    price: "na základe dohody",
-    priceEn: "by agreement"
-  },
-  {
-    service: "Obchodné spory",
-    serviceEn: "Commercial disputes",
-    price: "na základe dohody",
-    priceEn: "by agreement"
-  },
-  {
-    service: "Kolektívne vyjednávanie a pracovnoprávne spory",
-    serviceEn: "Collective bargaining and employment disputes",
+    service: "Obchodné spory, pracovné spory, civilné spory, kolektívne vyjednávanie",
+    serviceEn: "Commercial disputes, employment disputes, civil disputes, collective bargaining",
     price: "na základe dohody",
     priceEn: "by agreement"
   },
