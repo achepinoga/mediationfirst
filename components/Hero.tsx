@@ -42,7 +42,7 @@ export function Hero() {
             src="/images/mediationfirst-1.jpg"
             alt="Mediácia — dohoda medzi stranami"
             fill
-            className="object-cover"
+            className="object-cover object-bottom"
             priority
           />
         </div>
