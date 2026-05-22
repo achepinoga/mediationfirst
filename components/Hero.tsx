@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Award, Languages, Scale } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -36,12 +37,14 @@ export function Hero() {
             ))}
           </div>
         </div>
-        <div className="relative">
-          <div className="flex min-h-[430px] flex-col justify-end overflow-hidden rounded-2xl bg-green-deep p-8 shadow-line">
-            <div className="max-w-sm border-l border-gold-pale/70 pl-5">
-              <p className="font-serif text-2xl leading-snug text-white">Pokojný priestor pre dohodu, nie konfrontáciu.</p>
-            </div>
-          </div>
+        <div className="relative min-h-[430px] overflow-hidden rounded-2xl shadow-line">
+          <Image
+            src="/images/mediationfirst-1.jpg"
+            alt="Mediácia — dohoda medzi stranami"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
       </Container>
     </section>
