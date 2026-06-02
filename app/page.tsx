@@ -92,10 +92,17 @@ export default function Home() {
                 situácii strán.
               </p>
             </div>
-            <div className="[&_p]:text-white [&_span]:border-gold-pale/45">
-              {benefits.slice(0, 6).map((benefit) => (
-                <BenefitItem key={benefit} text={benefit} />
-              ))}
+            <div className="grid gap-x-10 sm:grid-cols-2 [&_p]:text-white [&_span]:border-gold-pale/45">
+              <div>
+                {benefits.slice(0, 3).map((benefit) => (
+                  <BenefitItem key={benefit} text={benefit} />
+                ))}
+              </div>
+              <div>
+                {benefits.slice(3, 6).map((benefit) => (
+                  <BenefitItem key={benefit} text={benefit} />
+                ))}
+              </div>
             </div>
           </div>
         </Container>

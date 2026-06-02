@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { site } from "@/data/site";
 import { Button } from "@/components/ui/Button";
+import { LanguageText } from "@/components/LanguageText";
 
 export function LegalServicesBanner() {
   return (
@@ -14,7 +15,7 @@ export function LegalServicesBanner() {
             mills.sk a bude odkazovať späť na Mediationfirst.
           </p>
           <p className="mt-3 inline-flex items-center gap-2 rounded-md bg-gold-muted/15 px-3 py-1.5 text-sm font-semibold text-gold-muted">
-            Stránka právnych služieb — pripravujeme
+            <LanguageText sk="Stránka právnych služieb — pripravujeme" en="Legal services page — coming soon" />
           </p>
         </div>
         <Button href={site.legalUrl} variant="primary" className="gap-2">
