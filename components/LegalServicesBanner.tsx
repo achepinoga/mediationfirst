@@ -13,6 +13,9 @@ export function LegalServicesBanner() {
             Okrem mediácie poskytujeme aj právne služby. Samostatná webová stránka právnych služieb bude dostupná na
             mills.sk a bude odkazovať späť na Mediationfirst.
           </p>
+          <p className="mt-3 inline-flex items-center gap-2 rounded-md bg-gold-muted/15 px-3 py-1.5 text-sm font-semibold text-gold-muted">
+            Stránka právnych služieb — pripravujeme
+          </p>
         </div>
         <Button href={site.legalUrl} variant="primary" className="gap-2">
           Prejsť na právne služby <ArrowUpRight className="h-4 w-4" aria-hidden />
