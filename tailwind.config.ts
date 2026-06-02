@@ -23,7 +23,7 @@ const config: Config = {
         muted: "#6E6A63"
       },
       fontFamily: {
-        serif: ["Libre Baskerville", "Cormorant Garamond", "Georgia", "serif"],
+        serif: ["Source Sans 3", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
         sans: ["Source Sans 3", "Inter", "ui-sans-serif", "system-ui", "sans-serif"]
       },
       boxShadow: {

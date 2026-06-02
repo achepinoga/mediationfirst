@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { BenefitItem } from "@/components/BenefitItem";
 import { ContactCTA } from "@/components/ContactCTA";
@@ -40,6 +41,14 @@ const routeTitles: Record<string, { title: string; titleEn: string; subtitle: st
   }
 };
 
+const pageImages: Record<string, { src: string; alt: string }> = {
+  "o-nas": { src: "/images/about-office.png", alt: "Kancelária Mediationfirst" },
+  "co-je-mediacia": { src: "/images/mediation-room.png", alt: "Mediačná miestnosť" },
+  "ako-prebieha-mediacia": { src: "/images/process-office.png", alt: "Mediačná zasadacia miestnosť" },
+  cennik: { src: "/images/office-round-table.png", alt: "Moderná kancelária" },
+  "vyhody-mediacie": { src: "/images/benefits-office.png", alt: "Pokojná kancelária" }
+};
+
 export function generateStaticParams() {
   return [
     ...Object.keys(staticPages).map((slug) => ({ slug })),
@@ -64,20 +73,59 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
   const titleEn = page?.titleEn ?? route?.titleEn ?? "";
   const subtitle = page?.subtitle ?? route?.subtitle ?? "";
   const subtitleEn = page?.subtitleEn ?? route?.subtitleEn ?? "";
+  const pageImage = pageImages[params.slug];
+  const isFullBleed = ["cennik", "vyhody-mediacie", "co-je-mediacia", "o-nas", "ako-prebieha-mediacia"].includes(params.slug) && pageImage;
 
   return (
     <>
-      <section className="border-b border-green-deep/10 py-16">
-        <Container>
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-gold-muted">Mediationfirst</p>
-          <h1 className="mt-4 max-w-4xl font-serif text-5xl leading-tight text-green-forest">
-            <LanguageText sk={title} en={titleEn} />
-          </h1>
-          <p className="mt-5 max-w-3xl text-xl leading-8 text-muted">
-            <LanguageText sk={subtitle} en={subtitleEn} />
-          </p>
-        </Container>
-      </section>
+      {isFullBleed && pageImage ? (
+        <section className="relative flex min-h-[340px] items-center overflow-hidden border-b border-green-deep/10">
+          <Image src={pageImage.src} alt={pageImage.alt} fill className="object-cover" priority />
+          <div className="absolute inset-0 bg-gradient-to-r from-ivory via-ivory/85 to-ivory/10" aria-hidden />
+          <Container className="relative z-10 py-16">
+            <div className={["vyhody-mediacie", "ako-prebieha-mediacia", "cennik"].includes(params.slug) ? "max-w-3xl" : "mx-auto max-w-3xl"}>
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-gold-muted">Mediationfirst</p>
+              <h1 className="mt-4 font-serif text-5xl leading-tight text-green-forest">
+                <LanguageText sk={title} en={titleEn} />
+              </h1>
+              <p className="mt-5 text-xl leading-8 text-muted">
+                <LanguageText sk={subtitle} en={subtitleEn} />
+              </p>
+            </div>
+          </Container>
+        </section>
+      ) : (
+        <section className="border-b border-green-deep/10 py-16">
+          <Container>
+            {pageImage ? (
+              <div className="grid items-center gap-10 lg:grid-cols-[1fr_420px]">
+                <div className="mx-auto max-w-3xl">
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-gold-muted">Mediationfirst</p>
+                  <h1 className="mt-4 font-serif text-5xl leading-tight text-green-forest">
+                    <LanguageText sk={title} en={titleEn} />
+                  </h1>
+                  <p className="mt-5 text-xl leading-8 text-muted">
+                    <LanguageText sk={subtitle} en={subtitleEn} />
+                  </p>
+                </div>
+                <div className="relative hidden h-[300px] overflow-hidden rounded-xl lg:block">
+                  <Image src={pageImage.src} alt={pageImage.alt} fill className="object-cover" priority />
+                </div>
+              </div>
+            ) : (
+              <div className={params.slug === "nas-tim" ? "w-full" : "mx-auto max-w-3xl"}>
+                <p className="text-xs font-bold uppercase tracking-[0.24em] text-gold-muted">Mediationfirst</p>
+                <h1 className="mt-4 font-serif text-5xl leading-tight text-green-forest">
+                  <LanguageText sk={title} en={titleEn} />
+                </h1>
+                <p className="mt-5 text-xl leading-8 text-muted">
+                  <LanguageText sk={subtitle} en={subtitleEn} />
+                </p>
+              </div>
+            )}
+          </Container>
+        </section>
+      )}
 
       {page ? (
         <section className="py-20">
