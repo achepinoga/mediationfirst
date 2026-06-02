@@ -8,13 +8,13 @@ type Member = (typeof team)[number];
 export function TeamCard({ member }: { member: Member }) {
   return (
     <article className="grid gap-6 rounded-2xl border border-green-deep/10 bg-white/80 p-6 md:grid-cols-[160px_1fr]">
-      <div className="relative min-h-44 overflow-hidden rounded-xl border border-gold-muted/25">
+      <div className="relative aspect-square overflow-hidden rounded-xl border border-gold-muted/25 md:aspect-auto md:min-h-44">
         <Image
           src={member.photo}
           alt={member.name}
           fill
-          className="object-cover object-top"
-          sizes="160px"
+          className="object-cover object-center"
+          sizes="(max-width: 768px) 100vw, 160px"
         />
       </div>
       <div>
