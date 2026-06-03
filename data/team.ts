@@ -9,9 +9,9 @@ export const team = [
     registrationEn:
       "Marcela is an accredited mediator registered in the register of mediators maintained by the Ministry of Justice of the Slovak Republic under registration no. 2189.",
     summary:
-      "Špecializuje sa na pracovné právo, právne vzťahy a riešenie sporov. Má niekoľkoročnú skúsenosť v advokácii a pôsobí aj ako mediátorka kolektívnych pracovnoprávnych sporov.",
+      "Špecializuje sa na pracovné právo, právne vzťahy a riešenie sporov. Má niekoľkoročnú skúsenosť v advokácii a pôsobí aj ako mediátorka kolektívnych pracovnoprávnych sporov. Mám skúsenosti aj s pracovnou facilitáciou v spoločnostiach. Zameriavam sa na podporu konštruktívnej komunikácie, vedenie štruktúrovaných diskusií a pomoc tímom a manažmentu pri riešení pracovných problémov praktickým a vyváženým spôsobom.",
     summaryEn:
-      "She specialises in labour law, legal relations and dispute resolution. She has several years of experience in legal practice and also acts as a mediator in collective employment disputes.",
+      "She specialises in labour law, legal relations and dispute resolution. She has several years of experience in legal practice and also acts as a mediator in collective employment disputes. She also has experience with workplace facilitation in companies. Her work focuses on supporting constructive communication, guiding structured discussions, and helping teams and management address workplace issues in a practical, balanced, and solution-oriented manner. This complements her background in employment law, mediation, and conflict resolution.",
     phone: "+421 903 127 231",
     email: "marcela@mediationfirst.sk"
   },

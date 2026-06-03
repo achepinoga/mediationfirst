@@ -81,7 +81,7 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
       {isFullBleed && pageImage ? (
         <section className="relative flex min-h-[340px] items-center overflow-hidden border-b border-green-deep/10">
           <Image src={pageImage.src} alt={pageImage.alt} fill className="object-cover" priority />
-          <div className="absolute inset-0 bg-gradient-to-r from-ivory via-ivory/85 to-ivory/10" aria-hidden />
+          <div className="absolute inset-0 bg-gradient-to-r from-beige/95 via-beige/60 to-transparent" aria-hidden />
           <Container className="relative z-10 py-16">
             <div className={["vyhody-mediacie", "ako-prebieha-mediacia", "cennik"].includes(params.slug) ? "max-w-3xl" : "mx-auto max-w-3xl"}>
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-gold-muted">Mediationfirst</p>

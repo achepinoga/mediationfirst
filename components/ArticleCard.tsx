@@ -15,28 +15,30 @@ export type ArticleListItem = {
   coverImageAlt?: string | null;
 };
 
-const FALLBACK_COVER = "/images/article-cover-fallback.png";
-
 export function ArticleCard({ article }: { article: ArticleListItem }) {
-  const coverSrc = article.coverImageUrl ?? FALLBACK_COVER;
-  const coverAlt = article.coverImageAlt ?? article.title;
-
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-green-deep/10 bg-white/80 transition hover:border-gold-muted/60 hover:bg-white">
-      <div className="relative h-44 w-full shrink-0">
-        <Image
-          src={coverSrc}
-          alt={coverAlt}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-green-forest/30 to-transparent" />
-        <span className="absolute bottom-3 left-4 text-xs font-bold uppercase tracking-[0.18em] text-white drop-shadow">
-          <LanguageText sk={article.category} en={article.categoryEn ?? article.category} />
-        </span>
-      </div>
+      {article.coverImageUrl ? (
+        <div className="relative h-44 w-full shrink-0">
+          <Image
+            src={article.coverImageUrl}
+            alt={article.coverImageAlt ?? article.title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-green-forest/30 to-transparent" />
+          <span className="absolute bottom-3 left-4 text-xs font-bold uppercase tracking-[0.18em] text-white drop-shadow">
+            <LanguageText sk={article.category} en={article.categoryEn ?? article.category} />
+          </span>
+        </div>
+      ) : null}
       <div className="flex flex-1 flex-col p-6">
+        {!article.coverImageUrl ? (
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-gold-muted">
+            <LanguageText sk={article.category} en={article.categoryEn ?? article.category} />
+          </p>
+        ) : null}
         <h2 className="font-serif text-2xl leading-snug text-green-forest">
           <Link href={`/clanky/${article.slug}`} className="focus-ring rounded-md hover:text-green-deep">
             <LanguageText sk={article.title} en={article.titleEn ?? article.title} />

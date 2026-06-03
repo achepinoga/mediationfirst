@@ -56,7 +56,7 @@ export default function ContactPage() {
               </p>
             </div>
             <a
-              href="https://g.page/r/REPLACE_WITH_GOOGLE_PLACE_ID/review"
+              href="https://g.page/r/CQhjzEKeA58wEAE/review"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-green-forest transition hover:bg-gold-pale"
