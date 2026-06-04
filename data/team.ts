@@ -25,9 +25,9 @@ export const team = [
     registrationEn:
       "Simona is an accredited mediator registered in the register of mediators maintained by the Ministry of Justice of the Slovak Republic under registration no. 2193.",
     summary:
-      "Ako advokátka má skúsenosti so spormi z obchodného a občianskeho práva. Pracuje so slovenskými aj zahraničnými spoločnosťami a jednotlivcami a poskytuje mediáciu a dohody aj v anglickom jazyku.",
+      "Simona je zároveň advokátka s dlhoročnými skúsenosťami v rôznych oblastiach práva, vrátane sporov v oblasti obchodného, pracovného a občianskeho práva. V mediácii uplatňuje praktické znalosti, ktoré nadobudla počas vykonávanie právnickej praxe pri poskytovaní služieb slovenským, ako aj zahraničným spoločnostiam a fyzickým osobám. Mediáciu a následné vypracovanie dohody strán poskytuje aj v anglickom jazyku.",
     summaryEn:
-      "As an attorney, she has experience with disputes from commercial and civil law. She works with both Slovak and foreign companies and individuals, and provides mediation and agreements in English.",
+      "Simona is also a lawyer with many years of experience in various areas of law, including disputes in the field of commercial, employment and civil law. In mediation, she applies practical knowledge acquired during legal practice providing services to Slovak and foreign companies and individuals. She also provides mediation and the drafting of agreements in English.",
     phone: "+421 917 840 198",
     email: "simona@mediationfirst.sk"
   }

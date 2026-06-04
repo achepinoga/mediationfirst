@@ -11,8 +11,7 @@ export function LegalServicesBanner() {
           <div className="mb-5 h-px w-20 bg-gold-muted" />
           <h2 className="font-serif text-3xl text-green-forest">Poskytujeme aj právne služby</h2>
           <p className="mt-4 max-w-2xl text-lg leading-8 text-muted">
-            Okrem mediácie poskytujeme aj právne služby. Samostatná webová stránka právnych služieb bude dostupná na
-            mills.sk a bude odkazovať späť na Mediationfirst.
+            Okrem mediácie poskytujeme aj právne služby.
           </p>
           <p className="mt-3 inline-flex items-center gap-2 rounded-md bg-gold-muted/15 px-3 py-1.5 text-sm font-semibold text-gold-muted">
             <LanguageText sk="Stránka právnych služieb — pripravujeme" en="Legal services page — coming soon" />
