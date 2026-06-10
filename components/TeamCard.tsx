@@ -28,6 +28,11 @@ export function TeamCard({ member }: { member: Member }) {
         <p className="mt-3 leading-7 text-muted">
           <LanguageText sk={member.summary} en={member.summaryEn} />
         </p>
+        {member.summaryExtra ? (
+          <p className="mt-3 leading-7 text-muted">
+            <LanguageText sk={member.summaryExtra} en={member.summaryExtraEn} />
+          </p>
+        ) : null}
         <div className="mt-5 flex flex-wrap gap-4 text-sm font-semibold text-green-deep">
           <a href={`tel:${member.phone.replace(/\s/g, "")}`} className="focus-ring inline-flex items-center gap-2 rounded-md hover:text-green-forest">
             <Phone className="h-4 w-4 text-gold-muted" aria-hidden />

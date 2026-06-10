@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Award, Languages, Scale } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -12,10 +11,10 @@ const trust = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-green-deep/10">
-      <Container className="grid min-h-[calc(100vh-5rem)] items-center gap-12 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
-        <div>
+      <Container className="flex min-h-[calc(100vh-5rem)] items-center py-16 lg:py-20">
+        <div className="max-w-3xl">
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.28em] text-gold-muted">Objavte výhody mediácie</p>
-          <h1 className="max-w-3xl font-serif text-5xl leading-[1.05] text-green-forest sm:text-6xl lg:text-7xl">
+          <h1 className="font-serif text-5xl leading-[1.05] text-green-forest sm:text-6xl lg:text-7xl">
             Mediujte s(právne)
           </h1>
           <p className="mt-7 max-w-2xl text-xl leading-9 text-muted">
@@ -36,15 +35,6 @@ export function Hero() {
               </div>
             ))}
           </div>
-        </div>
-        <div className="relative min-h-[430px] overflow-hidden rounded-2xl shadow-line">
-          <Image
-            src="/images/mediationfirst-1.jpg"
-            alt="Mediácia — dohoda medzi stranami"
-            fill
-            className="object-cover object-bottom"
-            priority
-          />
         </div>
       </Container>
     </section>

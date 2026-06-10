@@ -1,8 +1,8 @@
+import Image from "next/image";
 import { ArticleCard } from "@/components/ArticleCard";
 import { BenefitItem } from "@/components/BenefitItem";
 import { ContactCTA } from "@/components/ContactCTA";
 import { Hero } from "@/components/Hero";
-import { LegalServicesBanner } from "@/components/LegalServicesBanner";
 import { MunicipalityServiceBanner } from "@/components/MunicipalityServiceBanner";
 import { ServiceCard } from "@/components/ServiceCard";
 import { TeamCard } from "@/components/TeamCard";
@@ -61,12 +61,6 @@ export default function Home() {
 
       <section className="py-20">
         <Container>
-          <MunicipalityServiceBanner />
-        </Container>
-      </section>
-
-      <section className="py-20">
-        <Container>
           <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <SectionHeading eyebrow="Tím" title="Akreditované mediátorky s právnickou praxou" />
             <Button href="/nas-tim" variant="secondary">
@@ -83,7 +77,17 @@ export default function Home() {
 
       <section className="bg-green-forest py-20 text-white">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="grid gap-12 lg:grid-cols-[0.45fr_0.55fr] lg:items-start">
+            <div className="overflow-hidden rounded-xl">
+              <Image
+                src="/images/mediationfirst-1.jpg"
+                alt="Dohoda — podanie rúk"
+                width={0}
+                height={0}
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="h-auto w-full"
+              />
+            </div>
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-gold-pale">Výhody mediácie</p>
               <h2 className="mt-4 font-serif text-4xl leading-tight">Riešenie, ktoré necháva stranám kontrolu.</h2>
@@ -91,17 +95,17 @@ export default function Home() {
                 Výhody mediácie vychádzajú z dobrovoľnosti, dôvernosti a možnosti vytvoriť dohodu prispôsobenú reálnej
                 situácii strán.
               </p>
-            </div>
-            <div className="grid gap-x-10 sm:grid-cols-2 [&_p]:text-white [&_span]:border-gold-pale/45">
-              <div>
-                {benefits.slice(0, 3).map((benefit) => (
-                  <BenefitItem key={benefit} text={benefit} />
-                ))}
-              </div>
-              <div>
-                {benefits.slice(3, 6).map((benefit) => (
-                  <BenefitItem key={benefit} text={benefit} />
-                ))}
+              <div className="mt-8 grid gap-x-10 sm:grid-cols-2 [&_p]:text-white [&_span]:border-gold-pale/45">
+                <div>
+                  {benefits.slice(0, 3).map((benefit) => (
+                    <BenefitItem key={benefit} text={benefit} />
+                  ))}
+                </div>
+                <div>
+                  {benefits.slice(3, 6).map((benefit) => (
+                    <BenefitItem key={benefit} text={benefit} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -130,7 +134,7 @@ export default function Home() {
 
       <section className="pb-20">
         <Container>
-          <LegalServicesBanner />
+          <MunicipalityServiceBanner />
         </Container>
       </section>
 
