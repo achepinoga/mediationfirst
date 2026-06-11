@@ -13,9 +13,9 @@ export const team = [
     summaryEn:
       "She specialises in labour law, legal relations and dispute resolution. She has several years of experience in legal practice and also acts as a mediator in collective employment disputes.",
     summaryExtra:
-      "Má skúsenosti s pracovnou facilitáciou v spoločnostiach. Zameriava sa na podporu konštruktívnej komunikácie, vedenie štruktúrovaných diskusií a pomoc tímom a manažmentu pri riešení pracovných problémov praktickým a vyváženým spôsobom.",
+      "Marcela je zároveň sprostredkovateľom kolektívnych pracovnoprávnych sporov zapísaným v zozname sprostredkovateľov vedenom Ministerstvom práce, sociálnych vecí a rodiny Slovenskej republiky na základe overenia odbornej spôsobilosti na výkon činnosti sprostredkovateľa podľa zákona č. 2/1991 Zb. o kolektívnom vyjednávaní.",
     summaryExtraEn:
-      "She also has experience with workplace facilitation in companies. Her work focuses on supporting constructive communication, guiding structured discussions, and helping teams and management address workplace issues in a practical, balanced, and solution-oriented manner.",
+      "Marcela is also registered as a conciliator of collective employment disputes in the list of conciliators maintained by the Ministry of Labour, Social Affairs and Family of the Slovak Republic, based on verification of professional competence pursuant to Act No. 2/1991 Coll. on Collective Bargaining.",
     phone: "+421 903 127 231",
     email: "marcela@mediationfirst.sk"
   },

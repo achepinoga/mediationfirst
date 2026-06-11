@@ -223,7 +223,7 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
 
       <section className="pb-20">
         <Container>
-          <LegalServicesBanner />
+          {params.slug === "o-nas" ? <LegalServicesBanner /> : <MunicipalityServiceBanner />}
         </Container>
       </section>
       <ContactCTA />

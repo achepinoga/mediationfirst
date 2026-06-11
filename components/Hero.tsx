@@ -11,7 +11,7 @@ const trust = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-green-deep/10">
-      <Container className="flex min-h-[calc(100vh-5rem)] items-center py-16 lg:py-20">
+      <Container className="flex items-center py-12 lg:py-16">
         <div className="max-w-3xl">
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.28em] text-gold-muted">Objavte výhody mediácie</p>
           <h1 className="font-serif text-5xl leading-[1.05] text-green-forest sm:text-6xl lg:text-7xl">

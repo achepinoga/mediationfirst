@@ -77,15 +77,13 @@ export default function Home() {
 
       <section className="bg-green-forest py-20 text-white">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.45fr_0.55fr] lg:items-start">
-            <div className="overflow-hidden rounded-xl">
+          <div className="grid gap-12 lg:grid-cols-[0.45fr_0.55fr] lg:items-stretch">
+            <div className="relative min-h-[200px] overflow-hidden rounded-xl">
               <Image
                 src="/images/mediationfirst-1.jpg"
                 alt="Dohoda — podanie rúk"
-                width={0}
-                height={0}
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                className="h-auto w-full"
+                fill
+                className="object-contain"
               />
             </div>
             <div>
