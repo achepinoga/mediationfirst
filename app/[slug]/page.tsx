@@ -41,12 +41,12 @@ const routeTitles: Record<string, { title: string; titleEn: string; subtitle: st
   }
 };
 
-const pageImages: Record<string, { src: string; alt: string }> = {
+const pageImages: Record<string, { src: string; alt: string; objectPosition?: string }> = {
   "o-nas": { src: "/images/about-office.png", alt: "Kancelária Mediationfirst" },
   "co-je-mediacia": { src: "/images/mediation-room.png", alt: "Mediačná miestnosť" },
   "ako-prebieha-mediacia": { src: "/images/process-office.png", alt: "Mediačná zasadacia miestnosť" },
   cennik: { src: "/images/office-round-table.png", alt: "Moderná kancelária" },
-  "vyhody-mediacie": { src: "/images/benefits-office.png", alt: "Pokojná kancelária" }
+  "vyhody-mediacie": { src: "/images/benefits-office.png", alt: "Pokojná kancelária", objectPosition: "center 70%" }
 };
 
 export function generateStaticParams() {
@@ -80,7 +80,7 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
     <>
       {isFullBleed && pageImage ? (
         <section className="relative flex min-h-[340px] items-center overflow-hidden border-b border-green-deep/10">
-          <Image src={pageImage.src} alt={pageImage.alt} fill className="object-cover" priority />
+          <Image src={pageImage.src} alt={pageImage.alt} fill className="object-cover" style={pageImage.objectPosition ? { objectPosition: pageImage.objectPosition } : undefined} priority />
           <div className="absolute inset-0 bg-gradient-to-r from-beige/95 via-beige/60 to-transparent" aria-hidden />
           <Container className="relative z-10 py-16">
             <div className={["vyhody-mediacie", "ako-prebieha-mediacia", "cennik"].includes(params.slug) ? "max-w-3xl" : "mx-auto max-w-3xl"}>
@@ -202,20 +202,32 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
       {params.slug === "vyhody-mediacie" ? (
         <section className="py-20">
           <Container>
-            <SectionHeading
-              eyebrow={<LanguageText sk="Prečo mediácia" en="Why mediation" />}
-              title={<LanguageText sk="Výhody, ktoré majú praktický význam" en="Benefits with practical significance" />}
-              text={
-                <LanguageText
-                  sk="Mediácia je navrhnutá tak, aby stranám pomohla nájsť riešenie bez zbytočného eskalovania konfliktu."
-                  en="Mediation is designed to help the parties find a solution without unnecessarily escalating the conflict."
+            <div className="grid gap-12 lg:grid-cols-[0.35fr_0.65fr] lg:items-stretch">
+              <div className="relative min-h-[200px] overflow-hidden rounded-xl">
+                <Image
+                  src="/images/mediationfirst-1.jpg"
+                  alt="Dohoda — podanie rúk"
+                  fill
+                  className="object-contain"
                 />
-              }
-            />
-            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {benefits.map((benefit) => (
-                <BenefitItem key={benefit} text={benefit} />
-              ))}
+              </div>
+              <div>
+                <SectionHeading
+                  eyebrow={<LanguageText sk="Prečo mediácia" en="Why mediation" />}
+                  title={<LanguageText sk="Výhody, ktoré majú praktický význam" en="Benefits with practical significance" />}
+                  text={
+                    <LanguageText
+                      sk="Mediácia je navrhnutá tak, aby stranám pomohla nájsť riešenie bez zbytočného eskalovania konfliktu."
+                      en="Mediation is designed to help the parties find a solution without unnecessarily escalating the conflict."
+                    />
+                  }
+                />
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  {benefits.map((benefit) => (
+                    <BenefitItem key={benefit} text={benefit} />
+                  ))}
+                </div>
+              </div>
             </div>
           </Container>
         </section>
