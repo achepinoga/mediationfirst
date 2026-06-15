@@ -8,19 +8,11 @@ import { MunicipalityServiceBanner } from "@/components/MunicipalityServiceBanne
 import { PriceList } from "@/components/PriceList";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
 import { ServiceCard } from "@/components/ServiceCard";
-import { TeamCard } from "@/components/TeamCard";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { benefits, disputeCategories, staticPages } from "@/data/pages";
-import { team } from "@/data/team";
 
 const routeTitles: Record<string, { title: string; titleEn: string; subtitle: string; subtitleEn: string }> = {
-  "nas-tim": {
-    title: "Náš tím",
-    titleEn: "Our team",
-    subtitle: "Mediáciu poskytujú akreditované mediátorky s právnickou praxou.",
-    subtitleEn: "Mediation is provided by accredited mediators with legal experience."
-  },
   "ako-prebieha-mediacia": {
     title: "Ako prebieha mediácia",
     titleEn: "Mediation process",
@@ -52,7 +44,6 @@ const pageImages: Record<string, { src: string; alt: string; objectPosition?: st
 export function generateStaticParams() {
   return [
     ...Object.keys(staticPages).map((slug) => ({ slug })),
-    { slug: "nas-tim" },
     { slug: "ako-prebieha-mediacia" },
     { slug: "cennik" },
     { slug: "vyhody-mediacie" },
@@ -113,7 +104,7 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
                 </div>
               </div>
             ) : (
-              <div className={params.slug === "nas-tim" ? "w-full" : "mx-auto max-w-3xl"}>
+              <div className="mx-auto max-w-3xl">
                 <p className="text-xs font-bold uppercase tracking-[0.24em] text-gold-muted">Mediationfirst</p>
                 <h1 className="mt-4 font-serif text-5xl leading-tight text-green-forest">
                   <LanguageText sk={title} en={titleEn} />
@@ -149,16 +140,6 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
                 <MunicipalityServiceBanner />
               </div>
             ) : null}
-          </Container>
-        </section>
-      ) : null}
-
-      {params.slug === "nas-tim" ? (
-        <section className="py-20">
-          <Container className="grid gap-6">
-            {team.map((member) => (
-              <TeamCard key={member.email} member={member} />
-            ))}
           </Container>
         </section>
       ) : null}

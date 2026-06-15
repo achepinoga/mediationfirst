@@ -6,14 +6,26 @@ import { Hero } from "@/components/Hero";
 import { MunicipalityServiceBanner } from "@/components/MunicipalityServiceBanner";
 import { ServiceCard } from "@/components/ServiceCard";
 import { TeamCard } from "@/components/TeamCard";
+import type { TeamMember } from "@/components/TeamCard";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { articles } from "@/data/articles";
 import { benefits, disputeCategories } from "@/data/pages";
-import { team } from "@/data/team";
+import { team as staticTeam } from "@/data/team";
+import { client } from "@/sanity/lib/client";
+import { teamQuery } from "@/sanity/lib/queries";
 
-export default function Home() {
+async function getTeam(): Promise<TeamMember[]> {
+  const sanityTeam: TeamMember[] = await client
+    .fetch(teamQuery, {}, { cache: "no-store" })
+    .catch(() => []);
+  if (sanityTeam.length > 0) return sanityTeam;
+  return staticTeam;
+}
+
+export default async function Home() {
+  const team = await getTeam();
   return (
     <>
       <Hero />

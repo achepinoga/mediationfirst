@@ -13,9 +13,13 @@ export const team = [
     summaryEn:
       "She specialises in labour law, legal relations and dispute resolution. She has several years of experience in legal practice.",
     summaryExtra:
-      "Marcela je zároveň sprostredkovateľom kolektívnych pracovnoprávnych sporov zapísaným v zozname sprostredkovateľov vedenom Ministerstvom práce, sociálnych vecí a rodiny Slovenskej republiky na základe overenia odbornej spôsobilosti na výkon činnosti sprostredkovateľa podľa zákona č. 2/1991 Zb. o kolektívnom vyjednávaní. Má skúsenosti s pracovnou facilitáciou v spoločnostiach. Zameriava sa na podporu konštruktívnej komunikácie, vedenie štruktúrovaných diskusií a pomoc tímom a manažmentu pri riešení pracovných problémov praktickým a vyváženým spôsobom.",
+      "Marcela je zároveň sprostredkovateľom kolektívnych pracovnoprávnych sporov zapísaným v zozname sprostredkovateľov vedenom Ministerstvom práce, sociálnych vecí a rodiny SR.",
     summaryExtraEn:
-      "Marcela is also registered as a conciliator of collective employment disputes in the list of conciliators maintained by the Ministry of Labour, Social Affairs and Family of the Slovak Republic, based on verification of professional competence pursuant to Act No. 2/1991 Coll. on Collective Bargaining. She also has experience with workplace facilitation in companies, focusing on supporting constructive communication, guiding structured discussions, and helping teams and management address workplace issues in a practical and balanced manner.",
+      "Marcela is also registered as a conciliator of collective employment disputes in the list of conciliators maintained by the Ministry of Labour, Social Affairs and Family of the Slovak Republic.",
+    summaryExtra2:
+      "Má skúsenosti s pracovnou facilitáciou v spoločnostiach. Zameriava sa na podporu konštruktívnej komunikácie, vedenie štruktúrovaných diskusií a pomoc tímom a manažmentu pri riešení pracovných problémov praktickým a vyváženým spôsobom.",
+    summaryExtra2En:
+      "She also has experience with workplace facilitation in companies, focusing on supporting constructive communication, guiding structured discussions, and helping teams and management address workplace issues in a practical and balanced manner.",
     phone: "+421 903 127 231",
     email: "marcela@mediationfirst.sk"
   },
@@ -29,11 +33,17 @@ export const team = [
     registrationEn:
       "Simona is an accredited mediator registered in the register of mediators maintained by the Ministry of Justice of the Slovak Republic under registration no. 2193.",
     summary:
-      "Simona je zároveň advokátka s dlhoročnými skúsenosťami v rôznych oblastiach práva, vrátane sporov v oblasti obchodného, pracovného a občianskeho práva. V mediácii uplatňuje praktické znalosti, ktoré nadobudla počas vykonávanie právnickej praxe pri poskytovaní služieb slovenským, ako aj zahraničným spoločnostiam a fyzickým osobám. Mediáciu a následné vypracovanie dohody strán poskytuje aj v anglickom jazyku.",
+      "Simona je zároveň advokátka s dlhoročnými skúsenosťami v rôznych oblastiach práva, vrátane sporov v oblasti obchodného, pracovného a občianskeho práva.",
     summaryEn:
-      "Simona is also a lawyer with many years of experience in various areas of law, including disputes in the field of commercial, employment and civil law. In mediation, she applies practical knowledge acquired during legal practice providing services to Slovak and foreign companies and individuals. She also provides mediation and the drafting of agreements in English.",
-    summaryExtra: "",
-    summaryExtraEn: "",
+      "Simona is also a lawyer with many years of experience in various areas of law, including disputes in the field of commercial, employment and civil law.",
+    summaryExtra:
+      "V mediácii uplatňuje praktické znalosti, ktoré nadobudla počas vykonávanie právnickej praxe pri poskytovaní služieb slovenským, ako aj zahraničným spoločnostiam a fyzickým osobám.",
+    summaryExtraEn:
+      "In mediation, she applies practical knowledge acquired during legal practice providing services to Slovak and foreign companies and individuals.",
+    summaryExtra2:
+      "Mediáciu a následné vypracovanie dohody strán poskytuje aj v anglickom jazyku.",
+    summaryExtra2En:
+      "She also provides mediation and the drafting of party agreements in English.",
     phone: "+421 917 840 198",
     email: "simona@mediationfirst.sk"
   }

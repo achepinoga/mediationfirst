@@ -29,3 +29,20 @@ export const articleBySlugQuery = groq`*[_type == "article" && slug.current == $
 }`;
 
 export const articleSlugsQuery = groq`*[_type == "article"] { "slug": slug.current }`;
+
+export const teamQuery = groq`*[_type == "teamMember"] | order(order asc) {
+  name,
+  "photo": photo.asset->url,
+  role,
+  roleEn,
+  registration,
+  registrationEn,
+  summary,
+  summaryEn,
+  "summaryExtra": coalesce(summaryExtra, ""),
+  "summaryExtraEn": coalesce(summaryExtraEn, ""),
+  "summaryExtra2": coalesce(summaryExtra2, ""),
+  "summaryExtra2En": coalesce(summaryExtra2En, ""),
+  phone,
+  email
+}`;

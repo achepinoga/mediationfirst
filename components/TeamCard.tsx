@@ -1,9 +1,25 @@
 import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
-import type { team } from "@/data/team";
 import { LanguageText } from "@/components/LanguageText";
 
-type Member = (typeof team)[number];
+export type TeamMember = {
+  name: string;
+  photo: string;
+  role: string;
+  roleEn: string;
+  registration: string;
+  registrationEn: string;
+  summary: string;
+  summaryEn: string;
+  summaryExtra: string;
+  summaryExtraEn: string;
+  summaryExtra2: string;
+  summaryExtra2En: string;
+  phone: string;
+  email: string;
+};
+
+type Member = TeamMember;
 
 export function TeamCard({ member }: { member: Member }) {
   return (
@@ -31,6 +47,11 @@ export function TeamCard({ member }: { member: Member }) {
         {member.summaryExtra ? (
           <p className="mt-3 leading-7 text-muted">
             <LanguageText sk={member.summaryExtra} en={member.summaryExtraEn} />
+          </p>
+        ) : null}
+        {member.summaryExtra2 ? (
+          <p className="mt-3 leading-7 text-muted">
+            <LanguageText sk={member.summaryExtra2} en={member.summaryExtra2En} />
           </p>
         ) : null}
         <div className="mt-5 flex flex-wrap gap-4 text-sm font-semibold text-green-deep">
