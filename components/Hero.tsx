@@ -17,7 +17,7 @@ export function Hero() {
           <h1 className="font-serif text-5xl leading-[1.05] text-green-forest sm:text-6xl lg:text-7xl">
             Mediujte s(právne)
           </h1>
-          <p className="mt-7 max-w-2xl text-xl leading-9 text-muted">
+          <p className="mt-7 max-w-2xl text-xl leading-9 text-green-deep">
             Mediátorky z Mediationfirst, ako neutrálna strana s odbornou mediátorskou, ako aj právnickou praxou, Vám
             pomôžu nájsť riešenie Vášho sporu.
           </p>

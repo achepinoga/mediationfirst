@@ -79,7 +79,7 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
               <h1 className="mt-4 font-serif text-5xl leading-tight text-green-forest">
                 <LanguageText sk={title} en={titleEn} />
               </h1>
-              <p className="mt-5 text-xl leading-8 text-muted">
+              <p className="mt-5 text-xl leading-8 text-green-deep">
                 <LanguageText sk={subtitle} en={subtitleEn} />
               </p>
             </div>
@@ -95,7 +95,7 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
                   <h1 className="mt-4 font-serif text-5xl leading-tight text-green-forest">
                     <LanguageText sk={title} en={titleEn} />
                   </h1>
-                  <p className="mt-5 text-xl leading-8 text-muted">
+                  <p className="mt-5 text-xl leading-8 text-green-deep">
                     <LanguageText sk={subtitle} en={subtitleEn} />
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export default function StaticPage({ params }: { params: { slug: string } }) {
                 <h1 className="mt-4 font-serif text-5xl leading-tight text-green-forest">
                   <LanguageText sk={title} en={titleEn} />
                 </h1>
-                <p className="mt-5 text-xl leading-8 text-muted">
+                <p className="mt-5 text-xl leading-8 text-green-deep">
                   <LanguageText sk={subtitle} en={subtitleEn} />
                 </p>
               </div>
