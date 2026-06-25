@@ -9,7 +9,7 @@ export function ContactCTA() {
   return (
     <section className="relative overflow-hidden py-20">
       <Image
-        src="/images/bratislava-contact-bg.jpg"
+        src="/images/castle.jpg"
         alt=""
         fill
         className="object-cover"
